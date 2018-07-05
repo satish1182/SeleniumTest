@@ -1,0 +1,2 @@
+cd C:\Users\SatishC\Desktop\Selenium Grid\apache-tomcat-7.0.88\bin
+stratup.bat
