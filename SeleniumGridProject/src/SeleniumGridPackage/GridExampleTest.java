@@ -1,10 +1,14 @@
 package SeleniumGridPackage;
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -23,11 +27,10 @@ public class GridExampleTest {
 	public void setUp() throws MalformedURLException {
 //		System.setProperty("webdriver.gecko.driver", "C:\\Users\\SatishC\\workspace\\SeleniumGridProject\\geckodriver.exe");
 //		cap = DesiredCapabilities.firefox();
-
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\SatishC\\workspace\\SeleniumGridProject\\chromedriver.exe");
-		cap = DesiredCapabilities.chrome();
 		
-		cap.setPlatform(org.openqa.selenium.Platform.WINDOWS);
+//		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+		cap = DesiredCapabilities.chrome();
+		cap.setPlatform(org.openqa.selenium.Platform.ANY);
 		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
 		driver.manage().window().maximize();
 	}
